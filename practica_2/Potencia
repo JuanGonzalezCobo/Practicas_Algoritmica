@@ -1,0 +1,30 @@
+package recursividadAlgoritmica;
+
+import java.util.Scanner;
+
+public class Ejercicio2_P2 {
+
+	public static int potencia(int base, int exponente) {
+		if (exponente == 0) {
+			return 1;
+		}else {
+			return base * potencia(base, exponente - 1);
+		}
+	}
+	
+	
+	public static void main(String[] args) {
+		int base, exponente;
+		System.out.print("Ingrese el valor de la base: ");
+		Scanner sc = new Scanner(System.in);
+		base = sc.nextInt();
+		System.out.print("Ingrese el valor del exponente: ");
+		while((exponente = sc.nextInt())< 0) {
+			System.out.println("El numero debe ser positivo");	
+			System.out.print("Ingrese el valor del exponente: ");
+		}
+		System.out.println(base + " elevado a " + exponente + " es: " + potencia(base, exponente));
+
+	}
+
+}
